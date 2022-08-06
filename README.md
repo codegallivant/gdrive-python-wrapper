@@ -12,7 +12,7 @@ Python script to enable users to easily upload/download files/folders to/from th
 ## Usage
 
 ```py
-import gdrive_interact
+import gdrive_pyinteract
 
 # Specify path to credentials file of Google Drive API
 gdrive_interact.set_client_config_path("client_secrets.json")
