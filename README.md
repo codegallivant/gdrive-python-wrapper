@@ -12,28 +12,28 @@ Python script to enable users to easily upload/download files/folders to/from th
 ## Usage
 
 ```py
-import gdrive_pyinteract
+import gdrive_pyinteract as gdi
 
 # Specify path to credentials file of Google Drive API
-gdrive_interact.set_client_config_path("client_secrets.json")
+gdi.set_client_config_path("client_secrets.json")
 
 # Authenticate 
-client = gdrive_interact.authenticate_client("creds.txt") # Saves access token credentials. If file does not exist, one-time manual sign-in is done via browser and the file is auto-generated.
+client = gdi.authenticate_client("creds.txt") # Saves access token credentials. If file does not exist, one-time manual sign-in is done via browser and the file is auto-generated.
 
 # Get id of file/folder
-folder_id = gdrive_interact.get_id(client, "<drive_folder_name>/<drive_folder_name>/.../<folder_or_file_name>")
+folder_id = gdi.get_id(client, "<drive_folder_name>/<drive_folder_name>/.../<folder_or_file_name>")
 
 # Get list of files in a folder
-file_list = gdrive_interact.list_files(client, folder_id)
+file_list = gdi.list_files(client, folder_id)
 
 # Upload a file
-gdrive_interact.upload_file(client, '<drive_folder_name>/<drive_folder_name>/.../<drive_file_name>', "C:/.../<system_directory_name>", "<system_file_name>")
+gdi.upload_file(client, '<drive_folder_name>/<drive_folder_name>/.../<drive_file_name>', "C:/.../<system_directory_name>", "<system_file_name>")
 
 # Download a file
-gdrive_interact.download_file(client, "<drive_folder_name>/<drive_folder_name>/.../<drive_file_name>", "C:/.../<system_directory_name>")
+gdi.download_file(client, "<drive_folder_name>/<drive_folder_name>/.../<drive_file_name>", "C:/.../<system_directory_name>")
 
 # Download a folder
-gdrive_interact.download_folder(client, "<drive_folder_name>/<drive_folder_name>/.../<drive_folder_name>", "C:/.../<system_directory_name>", files_only=False) # Set files_only = True if you only want the files within, and not the folder itself
+gdi.download_folder(client, "<drive_folder_name>/<drive_folder_name>/.../<drive_folder_name>", "C:/.../<system_directory_name>", files_only=False) # Set files_only = True if you only want the files within, and not the folder itself
 ```
 
 ## How to create a credentials file
