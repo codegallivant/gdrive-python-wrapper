@@ -1,6 +1,6 @@
 # gdrive-interact
 
-Easily allows users to upload/download files to/from their Google Drive via Google Drive API.
+Python script to enable users to easily upload/download files/folders to/from their Google Drive via Google Drive API.
 
 ## Requirements
 - Python 
