@@ -97,7 +97,7 @@ def upload_file(client, target_folder_path , home_path, file_name):
     f.SetContentFile(os.path.join(home_path, file_name)) 
     f.Upload()
 
-# Example: upload_file('<drive_folder_name>/<drive_folder_name>/.../<drive_folder_name>',rf"C:/.../<system_directory_name>", "<file_name>")
+# Example: upload_file(client, '<drive_folder_name>/<drive_folder_name>/.../<drive_folder_name>',rf"C:/.../<system_directory_name>", "<file_name>")
 
 
 def upload_folder(client, target_folder_path, home_path):
@@ -127,7 +127,7 @@ def upload_folder(client, target_folder_path, home_path):
             upload_folder(client, target_folder_path+'/'+folder_name,  path)
 
 
-# Example: upload_folder('<drive_folder_name>/<drive_folder_name>/.../<drive_folder_name>',rf"C:/.../<folder_name>")
+# Example: upload_folder(client, '<drive_folder_name>/<drive_folder_name>/.../<drive_folder_name>',rf"C:/.../<folder_name>")
 
 
 def download_file(client, target_file_path, home_path):
@@ -147,7 +147,7 @@ def download_file(client, target_file_path, home_path):
     os.chdir(working_path)
 
 
-# Example: download_file("<drive_folder_name>/<drive_folder_name>/.../<file_name>", "C:/.../<system_directory_name>")
+# Example: download_file(client, "<drive_folder_name>/<drive_folder_name>/.../<file_name>", "C:/.../<system_directory_name>")
 
 
 def download_folder(client, target_folder_path, home_path, files_only = True):
@@ -176,4 +176,4 @@ def download_folder(client, target_folder_path, home_path, files_only = True):
         os.chdir(working_path)
 
 
-# download_folder ("<drive_folder_name>/<drive_folder_name>/.../<drive_folder_name>", "C:/.../<system_directory_name>")
+# download_folder (client, "<drive_folder_name>/<drive_folder_name>/.../<drive_folder_name>", "C:/.../<system_directory_name>")
